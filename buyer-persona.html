@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Persona - StartUP Companion</title>
+    <link rel="stylesheet" href="buyer-persona-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Calibri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2699.svg" alt="Startup Companion Logo" class="logo-img">
+                    <span class="logo-text">StartUP Companion</span>
+                </div>
+                <nav class="nav">
+                    <a href="buyer-persona.html" class="nav-link active">Buyer Persona</a>
+                    <a href="activity.html" class="nav-link">Activity</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="mentor.html" class="nav-link">Mentor</a>
+                    <a href="index.html" class="nav-link signout">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                    </a>
+                </nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="persona-container">
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <h1 class="page-title">Let's Get to Know Your Business</h1>
+                    <p class="welcome-message">
+                        Let's get to know your service business needs so we can personalize your guidance. 
+                        Answer these questions to help us create a tailored roadmap for your startup journey.
+                    </p>
+                </div>
+
+                <!-- Persona Form -->
+                <form class="persona-form" id="personaForm">
+                    <!-- Dynamic Questions Container -->
+                    <div id="questionsContainer" class="questions-container">
+                        <!-- Questions will be dynamically loaded here -->
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-large">
+                            Submit & Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2699.svg" alt="Startup Companion Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">StartUP Companion</span>
+                </div>
+                <p class="footer-tagline">Ready to turn your service business spark into reality? Start your journey today with Startup Companion—your AI-powered guide from registration to launch.</p>
+                
+                <div class="footer-nav">
+                    <a href="buyer-persona.html" class="footer-nav-link">Buyer Persona</a>
+                    <a href="activity.html" class="footer-nav-link">Activity</a>
+                    <a href="dashboard.html" class="footer-nav-link">Dashboard</a>
+                    <a href="mentor.html" class="footer-nav-link">Mentor</a>
+                    <a href="index.html" class="footer-nav-link">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="buyer-persona-script.js"></script>
+</body>
+</html>
