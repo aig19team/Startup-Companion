@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StartUP Companion</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Calibri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                   <img src="public/image copy copy.png" alt="Startup Companion Logo" class="logo-img">
+                   <span class="logo-text">StartUP Companion</span>
+                </div>
+                <nav class="nav">
+                    <a href="buyer-persona.html" class="nav-link">Buyer Persona</a>
+                    <a href="activity.html" class="nav-link">Activity</a>
+                    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                    <a href="mentor.html" class="nav-link">Mentor</a>
+                    <a href="index.html" class="nav-link signout">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                    </a>
+                </nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h1 class="page-title">Your Entrepreneurial Journey</h1>
+                <p class="welcome-message">See what you've achieved and what's next on your path to startup success!</p>
+            </div>
+
+            <!-- Overall Progress Section -->
+            <div class="overall-progress-section">
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <h2 class="progress-title">Overall Progress</h2>
+                        <p class="progress-subtitle">Your startup journey completion</p>
+                    </div>
+                    <div class="progress-visual">
+                        <div class="donut-chart" id="overallDonut">
+                            <div class="donut-inner">
+                                <span class="percentage" id="overallPercentage">0%</span>
+                                <span class="label">Complete</span>
+                            </div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="completedActivities">0</span>
+                                <span class="stat-label">Activities Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="totalActivities">0</span>
+                                <span class="stat-label">Total Activities</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="completedServices">0</span>
+                                <span class="stat-label">Services Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Progress Section -->
+            <div class="services-section">
+                <div class="section-header">
+                    <h2 class="section-title">Service Progress</h2>
+                    <p class="section-subtitle">Track your progress across all selected services</p>
+                </div>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Service cards will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Activities Timeline Section -->
+            <div class="timeline-section" id="timelineSection">
+                <div class="section-header">
+                    <h2 class="section-title">Activity Timeline</h2>
+                    <p class="section-subtitle">Your detailed journey through each service</p>
+                </div>
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Timeline will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Quick Actions Section -->
+            <div class="quick-actions-section">
+                <div class="section-header">
+                    <h2 class="section-title">Quick Actions</h2>
+                    <p class="section-subtitle">Continue your startup journey</p>
+                </div>
+                <div class="actions-grid">
+                    <a href="activity.html" class="action-card" id="continueActivityCard">
+                        <div class="action-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h3 class="action-title">Continue Activities</h3>
+                        <p class="action-description">Resume your current activity</p>
+                    </a>
+                    <a href="buyer-persona.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="action-title">Update Profile</h3>
+                        <p class="action-description">Refine your business information</p>
+                    </a>
+                    <a href="mentor.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="action-title">Connect with Mentors</h3>
+                        <p class="action-description">Get expert guidance</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                   <img src="public/image copy copy.png" alt="Startup Companion Logo" class="footer-logo-img">
+                   <span class="footer-logo-text">StartUP Companion</span>
+                </div>
+                <p class="footer-tagline">Ready to turn your service business spark into reality? Start your journey today with Startup Companion—your AI-powered guide from registration to launch.</p>
+                
+                <div class="footer-nav">
+                    <a href="buyer-persona.html" class="footer-nav-link">Buyer Persona</a>
+                    <a href="activity.html" class="footer-nav-link">Activity</a>
+                    <a href="dashboard.html" class="footer-nav-link">Dashboard</a>
+                    <a href="mentor.html" class="footer-nav-link">Mentor</a>
+                    <a href="index.html" class="footer-nav-link">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
