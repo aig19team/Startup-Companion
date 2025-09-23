@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - StartUP Companion</title>
+    <link rel="stylesheet" href="signup-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Calibri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Startup Companion Logo" class="logo-img">
+                    <span class="logo-text">StartUP Companion</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-card">
+                    <div class="signup-header">
+                        <h1 class="signup-title">Create Your Account</h1>
+                        <p class="signup-subtitle">Your startup journey begins here!</p>
+                    </div>
+
+                    <form class="signup-form" id="signupForm">
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password *</label>
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" class="form-input" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword()">
+                                    <i class="fas fa-eye" id="passwordIcon"></i>
+                                </button>
+                            </div>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">8 characters with at least one symbol and one number</span>
+                            </div>
+                        </div>
+
+                        <!-- Country Field -->
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country *</label>
+                            <select id="country" name="country" class="form-select" required>
+                                <option value="">Select your country</option>
+                                <option value="india">India</option>
+                                <option value="usa">United States</option>
+                                <option value="canada">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="australia">Australia</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- City Field -->
+                        <div class="form-group">
+                            <label for="city" class="form-label">City *</label>
+                            <input type="text" id="city" name="city" class="form-input" placeholder="Enter your city" required>
+                        </div>
+
+                        <!-- Services Selection -->
+                        <div class="form-group">
+                            <label class="form-label">Select Services You're Interested In *</label>
+                            <p class="form-helper">Choose the areas where you need guidance (select multiple)</p>
+                            <div class="services-grid">
+                                <div class="service-option">
+                                    <input type="checkbox" id="idea-tuning" name="services" value="idea-tuning">
+                                    <label for="idea-tuning" class="service-label">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Idea Tuning</span>
+                                    </label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="checkbox" id="registration" name="services" value="registration">
+                                    <label for="registration" class="service-label">
+                                        <i class="fas fa-file-contract"></i>
+                                        <span>Registration Guide</span>
+                                    </label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="checkbox" id="compliance" name="services" value="compliance">
+                                    <label for="compliance" class="service-label">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Compliance Guide</span>
+                                    </label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="checkbox" id="branding" name="services" value="branding">
+                                    <label for="branding" class="service-label">
+                                        <i class="fas fa-palette"></i>
+                                        <span>Branding Guide</span>
+                                    </label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="checkbox" id="hr-policy" name="services" value="hr-policy">
+                                    <label for="hr-policy" class="service-label">
+                                        <i class="fas fa-users"></i>
+                                        <span>HR Policy Hub</span>
+                                    </label>
+                                </div>
+                                <div class="service-option">
+                                    <input type="checkbox" id="mentors" name="services" value="mentors">
+                                    <label for="mentors" class="service-label">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>Connect with Mentors</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-primary btn-large">
+                            Sign Up & Get Started
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Login Link -->
+                    <div class="login-link">
+                        <p>Already have an account? <a href="login.html">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Startup Companion Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">StartUP Companion</span>
+                </div>
+                <p class="footer-tagline">Ready to turn your service business spark into reality? Start your journey today with Startup Companion—your AI-powered guide from registration to launch.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="signup-script.js"></script>
+</body>
+</html>
