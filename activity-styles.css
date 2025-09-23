@@ -1,0 +1,726 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6D94C5;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    color: #6D94C5;
+    background: #f8f9fa;
+}
+
+.nav-link.active {
+    color: #6D94C5;
+    background: #CBDCEB;
+    font-weight: 600;
+}
+
+.nav-link.signout {
+    color: #dc3545;
+}
+
+.nav-link.signout:hover {
+    color: #c82333;
+    background: #f8d7da;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6D94C5;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* Service Navigation */
+.service-navigation {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: none; /* Hidden initially, shown when activities start */
+}
+
+.service-navigation.active {
+    display: block;
+}
+
+.service-nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.service-nav-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.service-nav-item {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: white;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-nav-item:hover {
+    border-color: #6D94C5;
+    color: #6D94C5;
+}
+
+.service-nav-item.active {
+    border-color: #6D94C5;
+    background: #6D94C5;
+    color: white;
+}
+
+.service-nav-item.completed {
+    border-color: #28a745;
+    background: #28a745;
+    color: white;
+}
+
+/* Activity Container */
+.activity-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+}
+
+.welcome-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+}
+
+.welcome-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6D94C5, #5a7ba8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6D94C5;
+    margin-bottom: 1rem;
+}
+
+.welcome-message {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Activity Section */
+.activity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.service-header {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.service-icon-container {
+    width: 60px;
+    height: 60px;
+    background: #6D94C5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.service-icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #6D94C5;
+    margin-bottom: 0.5rem;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-text {
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.progress-bar-container {
+    flex: 1;
+    background: #e9ecef;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #6D94C5, #5a7ba8);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Activity Card */
+.activity-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.activity-header {
+    background: linear-gradient(135deg, #6D94C5, #5a7ba8);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.activity-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.activity-content {
+    padding: 2rem;
+}
+
+.guidance-section {
+    margin-bottom: 2rem;
+}
+
+.guidance-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #6D94C5;
+}
+
+.guidance-header i {
+    color: #6D94C5;
+    font-size: 1.2rem;
+}
+
+.guidance-header span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6D94C5;
+}
+
+.guidance-content {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #6D94C5;
+}
+
+.guidance-content h4 {
+    color: #6D94C5;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.guidance-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.guidance-content p:last-child {
+    margin-bottom: 0;
+}
+
+.guidance-content ul {
+    color: #666;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.guidance-content li {
+    margin-bottom: 0.5rem;
+}
+
+.action-section {
+    border-top: 1px solid #e9ecef;
+    padding-top: 2rem;
+}
+
+.action-helper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #e3f2fd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.action-helper i {
+    color: #6D94C5;
+    font-size: 1rem;
+}
+
+.action-helper span {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: #6D94C5;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Calibri', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #5a7ba8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(109, 148, 197, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #6D94C5;
+    padding: 16px 32px;
+    border: 2px solid #6D94C5;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Calibri', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #6D94C5;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 18px 36px;
+    font-size: 1.2rem;
+}
+
+/* Loading State */
+.btn-primary.loading,
+.btn-secondary.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-primary.loading::after,
+.btn-secondary.loading::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Completion Section */
+.completion-section {
+    text-align: center;
+}
+
+.completion-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+}
+
+.completion-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.completion-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.completion-message {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.completion-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.footer-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6D94C5;
+}
+
+.footer-tagline {
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: #6D94C5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        gap: 0.5rem;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .service-nav-list {
+        justify-content: center;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .completion-actions {
+        flex-direction: column;
+    }
+
+    .welcome-title,
+    .completion-title {
+        font-size: 2rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .activity-title {
+        font-size: 1.3rem;
+    }
+
+    .footer-nav {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .btn-large {
+        padding: 16px 28px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-card,
+    .completion-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .service-header {
+        padding: 1.5rem;
+    }
+
+    .activity-content {
+        padding: 1.5rem;
+    }
+
+    .welcome-title,
+    .completion-title {
+        font-size: 1.8rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .activity-title {
+        font-size: 1.2rem;
+    }
+
+    .btn-large {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.btn-primary:focus,
+.btn-secondary:focus,
+.service-nav-item:focus {
+    outline: 2px solid #6D94C5;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .activity-card,
+    .welcome-card,
+    .completion-card {
+        border: 2px solid #333;
+    }
+}

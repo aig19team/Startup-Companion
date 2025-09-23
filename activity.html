@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity - StartUP Companion</title>
+    <link rel="stylesheet" href="activity-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Calibri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                   <img src="public/image copy copy.png" alt="Startup Companion Logo" class="logo-img">
+                   <span class="logo-text">StartUP Companion</span>
+                </div>
+                <nav class="nav">
+                    <a href="buyer-persona.html" class="nav-link">Buyer Persona</a>
+                    <a href="activity.html" class="nav-link active">Activity</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="mentor.html" class="nav-link">Mentor</a>
+                    <a href="index.html" class="nav-link signout">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                    </a>
+                </nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Service Navigation -->
+            <div class="service-navigation" id="serviceNavigation">
+                <!-- Services will be dynamically loaded here -->
+            </div>
+
+            <!-- Activity Container -->
+            <div class="activity-container">
+                <!-- Welcome Message (shown initially) -->
+                <div class="welcome-section" id="welcomeSection">
+                    <div class="welcome-card">
+                        <div class="welcome-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h1 class="welcome-title">Let's Build Your Startup Together!</h1>
+                        <p class="welcome-message">
+                            Based on your responses, we've created a personalized roadmap for your startup journey. 
+                            Each step includes tailored guidance to help you succeed. Let's get started!
+                        </p>
+                        <button class="btn-primary btn-large" onclick="startActivities()">
+                            Start Your Journey
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Activity Section (hidden initially) -->
+                <div class="activity-section" id="activitySection" style="display: none;">
+                    <!-- Current Service Header -->
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <i class="service-icon" id="currentServiceIcon"></i>
+                        </div>
+                        <div class="service-info">
+                            <h2 class="service-title" id="currentServiceTitle"></h2>
+                            <div class="progress-info">
+                                <span class="progress-text" id="progressText">Step 1 of 5</span>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" id="progressBar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Card -->
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3 class="activity-title" id="activityTitle">Loading your next step...</h3>
+                        </div>
+
+                        <div class="activity-content">
+                            <div class="guidance-section">
+                                <div class="guidance-header">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Personalized Guidance</span>
+                                </div>
+                                <div class="guidance-content" id="guidanceContent">
+                                    <!-- Dynamic guidance content will be loaded here -->
+                                </div>
+                            </div>
+
+                            <div class="action-section">
+                                <div class="action-helper">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Is this guidance accurate for your situation? You can update your business info at any time.</span>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <button class="btn-primary btn-large" id="acceptBtn" onclick="acceptActivity()">
+                                        <i class="fas fa-check"></i>
+                                        Accept & Continue
+                                    </button>
+                                    <button class="btn-secondary btn-large" id="rejectBtn" onclick="rejectActivity()">
+                                        <i class="fas fa-edit"></i>
+                                        Reject & Edit Info
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completion Section (hidden initially) -->
+                <div class="completion-section" id="completionSection" style="display: none;">
+                    <div class="completion-card">
+                        <div class="completion-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2 class="completion-title">Congratulations!</h2>
+                        <p class="completion-message">
+                            You've successfully completed all your selected startup activities. 
+                            Your personalized roadmap is now ready in your dashboard.
+                        </p>
+                        <div class="completion-actions">
+                            <a href="dashboard.html" class="btn-primary btn-large">
+                                View Dashboard
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="mentor.html" class="btn-secondary btn-large">
+                                Connect with Mentors
+                                <i class="fas fa-user-tie"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                   <img src="public/image copy copy.png" alt="Startup Companion Logo" class="footer-logo-img">
+                   <span class="footer-logo-text">StartUP Companion</span>
+                </div>
+                <p class="footer-tagline">Ready to turn your service business spark into reality? Start your journey today with Startup Companion—your AI-powered guide from registration to launch.</p>
+                
+                <div class="footer-nav">
+                    <a href="buyer-persona.html" class="footer-nav-link">Buyer Persona</a>
+                    <a href="activity.html" class="footer-nav-link">Activity</a>
+                    <a href="dashboard.html" class="footer-nav-link">Dashboard</a>
+                    <a href="mentor.html" class="footer-nav-link">Mentor</a>
+                    <a href="index.html" class="footer-nav-link">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="activity-script.js"></script>
+</body>
+</html>
