@@ -1,7 +1,17 @@
-@@ .. @@
-   "scripts": {
--    "test": "echo \"Error: no test specified\" && exit 1"
-+    "dev": "vite",
-+    "build": "vite build",
-+    "preview": "vite preview"
-   },
+{
+  "name": "startup-companion",
+  "version": "1.0.0",
+  "description": "AI-powered guide for first-time entrepreneurs",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["startup", "entrepreneur", "business", "guide"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
