@@ -311,7 +311,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form auto-save to localStorage (optional)
     function saveFormData() {
         const formData = new FormData(signupForm);
-        const data = Object.fromEntries(formData);
+        const data = {};
+        
+        // Handle all form fields
+        for (const [key, value] of formData.entries()) {
+            if (key === 'services') {
+                // Store services as an array
+                if (!data.services) {
+                    data.services = [];
+                }
+                data.services.push(value);
+            } else {
+                data[key] = value;
+            }
+        }
         
         // Don't save password for security
         delete data.password;
@@ -329,13 +342,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 const field = document.querySelector(`[name="${key}"]`);
                 if (field && field.type !== 'password') {
                     if (field.type === 'checkbox') {
-                        if (data[key]) {
+                        if (key === 'services' && Array.isArray(data[key])) {
+                            // Handle services checkboxes
+                            const serviceCheckboxes = document.querySelectorAll(`[name="${key}"]`);
+                            serviceCheckboxes.forEach(checkbox => {
+                                if (data[key].includes(checkbox.value)) {
+                                    checkbox.checked = true;
+                                }
+                            });
+                        } else if (data[key]) {
                             field.checked = true;
                         }
                     } else {
                         field.value = data[key];
                     }
-                }
+                        }
             });
         }
     }
