@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loadUserData();
         generateServiceCards();
         updateOverallProgress();
-        generateTimeline();
         updateQuickActions();
     }
 
@@ -257,57 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Generate timeline
-    function generateTimeline() {
-        const timelineContainer = document.getElementById('timelineContainer');
-        timelineContainer.innerHTML = '<div class="timeline" id="timeline"></div>';
-        
-        const timeline = document.getElementById('timeline');
-        const allActivities = [];
-
-        // Collect all activities with their status
-        userServices.forEach((serviceKey, serviceIndex) => {
-            const serviceConfig = serviceConfigs[serviceKey];
-            const serviceProgress = progressData.services[serviceKey];
-            
-            if (serviceConfig && serviceProgress) {
-                serviceConfig.activities.forEach((activity, activityIndex) => {
-                    let status = 'pending';
-                    
-                    if (serviceIndex < progressData.currentServiceIndex || 
-                        (serviceIndex === progressData.currentServiceIndex && activityIndex < progressData.currentActivityIndex)) {
-                        status = 'completed';
-                    } else if (serviceIndex === progressData.currentServiceIndex && activityIndex === progressData.currentActivityIndex) {
-                        status = 'in-progress';
-                    }
-                    
-                    allActivities.push({
-                        name: activity,
-                        service: serviceConfig.title,
-                        status: status
-                    });
-                });
-            }
-        });
-
-        // Show only recent activities (last 10)
-        const recentActivities = allActivities.slice(-10);
-        
-        recentActivities.forEach(activity => {
-            const timelineItem = document.createElement('div');
-            timelineItem.className = `timeline-item ${activity.status}`;
-            
-            timelineItem.innerHTML = `
-                <div class="timeline-content">
-                    <h4 class="timeline-title">${activity.name}</h4>
-                    <p class="timeline-service">${activity.service}</p>
-                </div>
-            `;
-            
-            timeline.appendChild(timelineItem);
-        });
-    }
-
     // Update quick actions
     function updateQuickActions() {
         const continueCard = document.getElementById('continueActivityCard');
@@ -337,7 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loadUserData();
         generateServiceCards();
         updateOverallProgress();
-        generateTimeline();
         updateQuickActions();
     }
 
