@@ -1,2 +1,10 @@
 # Netlify redirects file
 /*    /index.html   200
+
+# Specific page redirects
+/signup    /signup.html    200
+/login     /login.html     200
+/buyer-persona    /buyer-persona.html    200
+/activity    /activity.html    200
+/dashboard    /dashboard.html    200
+/mentor    /mentor.html    200
